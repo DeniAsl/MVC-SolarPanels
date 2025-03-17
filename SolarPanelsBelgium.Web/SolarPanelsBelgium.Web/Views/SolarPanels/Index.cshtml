@@ -1,0 +1,98 @@
+﻿@model SolarPanelsBelgium.Core.Entitites.SolarPanel
+
+@{
+    ViewData["Title"] = "My Request";
+    var errors = TempData["Error"] as IEnumerable<string>;
+}
+
+<h1>My Request</h1>
+@if (errors != null && errors.Any())
+{
+    <div class="alert alert-danger">
+        <ul>
+            @foreach (var error in errors)
+            {
+                <li>@error</li>
+            }
+        </ul>
+    </div>
+}
+@if (Model == null)
+{
+    <p>
+        <a asp-action="Create">Request new quote</a>
+    </p>
+}
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Area)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Wattage)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EfficiencyClass)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RoofDesign)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RoofOrientation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PanelType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateSubmitted)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Status)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+
+        <tr>
+            @if (Model != null)
+            {
+                <td>
+                    @Html.DisplayFor(modelItem => Model.Area)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => Model.Wattage)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => Model.EfficiencyClass)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => Model.RoofDesign)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => Model.RoofOrientation)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => Model.PanelType)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => Model.DateSubmitted)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => Model.Price)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => Model.Status)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@Model.Id">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@Model.Id">Delete</a>
+                </td>
+            }
+        </tr>
+    </tbody>
+</table>

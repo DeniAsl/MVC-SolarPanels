@@ -1,0 +1,60 @@
+﻿@model SolarPanelsBelgium.Core.Entitites.SolarPanel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit my request</h1>
+
+<h4>Solar panel specs</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <input type="hidden" asp-for="ApplicationUserId" />
+            <div class="form-group">
+                <label asp-for="Area" class="control-label"></label>
+                <input asp-for="Area" class="form-control" />
+                <span asp-validation-for="Area" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Wattage" class="control-label"></label>
+                <input asp-for="Wattage" class="form-control" />
+                <span asp-validation-for="Wattage" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EfficiencyClass" class="control-label"></label>
+                <select asp-for="EfficiencyClass" class="form-control" asp-items="ViewBag.EfficiencyClass">
+                </select>
+            </div>
+            <div class="form-group">
+                <label asp-for="RoofDesign" class="control-label"></label>
+                <select asp-for="RoofDesign" class="form-control" asp-items="ViewBag.RoofDesign">
+                </select>
+            </div>
+            <div class="form-group">
+                <label asp-for="PanelType" class="control-label"></label>
+                <select asp-for="PanelType" class="form-control" asp-items="ViewBag.PanelType">
+                </select>
+            </div>
+            <div class="form-group">
+                <label asp-for="RoofOrientation" class="control-label"></label>
+                <input asp-for="RoofOrientation" class="form-control" />
+                <span asp-validation-for="RoofOrientation" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Cancel</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

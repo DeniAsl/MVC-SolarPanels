@@ -1,0 +1,97 @@
+﻿@model IEnumerable<SolarPanelsBelgium.Core.Entitites.SolarPanel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Area)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Wattage)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EfficiencyClass)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RoofDesign)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RoofOrientation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PanelType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateSubmitted)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ApplicationUser.FirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ApplicationUser.LastName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ApplicationUser.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Status)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Area)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Wattage)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EfficiencyClass)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RoofDesign)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RoofOrientation)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PanelType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateSubmitted)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ApplicationUser.FirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ApplicationUser.LastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ApplicationUser.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
+            <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Update Status</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

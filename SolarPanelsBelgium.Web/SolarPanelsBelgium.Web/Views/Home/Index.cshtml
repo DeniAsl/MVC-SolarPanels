@@ -1,0 +1,50 @@
+﻿@{
+    ViewData["Title"] = "Welcome to Solar Panel Solutions";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+</head>
+<body>
+
+    <section class="hero-section">
+        <div class="container">
+            <h1>Power Your Future with Solar Energy</h1>
+            <p>Harness the power of the sun and save on your energy bills. Let's get started with solar panel installation today!</p>
+            <a asp-controller="SolarPanels" asp-action="Index" class="btn btn-primary btn-lg">Get Your Solar Panel</a>
+        </div>
+    </section>
+
+    <section class="container text-center feature-section">
+        <h2>Why Choose Us?</h2>
+        <p>We provide reliable, affordable, and environmentally friendly solar panel installation services for your home or business.</p>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="feature-icon">
+                    <i class="fas fa-sun"></i>
+                </div>
+                <h3>Reliable Energy</h3>
+                <p>Solar power is reliable, renewable, and saves you money on energy bills.</p>
+            </div>
+            <div class="col-md-4">
+                <div class="feature-icon">
+                    <i class="fas fa-cogs"></i>
+                </div>
+                <h3>Top Quality Installation</h3>
+                <p>We ensure efficient and professional installation of your solar panels.</p>
+            </div>
+            <div class="col-md-4">
+                <div class="feature-icon">
+                    <i class="fas fa-leaf"></i>
+                </div>
+                <h3>Environmentally Friendly</h3>
+                <p>Reduce your carbon footprint and contribute to a greener planet.</p>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
